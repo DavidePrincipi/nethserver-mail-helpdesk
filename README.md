@@ -16,15 +16,19 @@ Installation
 ------------
 
 1. Install nethserver-mail package group:
+
    \# yum install @nethserver-mail
 
 2. Create the group members from the server-manager web UI.
 
 3. Clone this repository and step into the base directory:
+
    \# git clone git@github.com:DavidePrincipi/nethserver-mail-helpdesk.git
+
    \# cd nethserver-mail-helpdesk
 
 4. Run the script:
+
    \# ./helpdesk_install.sh <groupname> <member1,member2,...>
 
 

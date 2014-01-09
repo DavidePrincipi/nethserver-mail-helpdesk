@@ -1,0 +1,8 @@
+#
+# 60helpdesk custom template
+#
+smtp_header_checks = pcre:/etc/postfix/helpdesk_header.pcre
+smtp_generic_maps = hash:/etc/postfix/helpdesk_maps
+sender_bcc_maps = hash:/etc/postfix/helpdesk_maps
+
+

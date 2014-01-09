@@ -1,0 +1,19 @@
+#
+# 10members -- custom template
+#
+{
+    use NethServer::MailServer;
+    use esmith::AccountsDB;
+
+    my $mailServer = NethServer::MailServer->new();
+    my $accountsDb = esmith::AccountsDB->open_ro() || die("Could not open Accounts DB");   
+    my $groupName = $helpdesk{GroupName} || 'helpdesk';
+    my @members = split(',', $accountsDb->get_prop($groupName, 'Members') || '');
+
+    foreach my $userName (@members) {
+	foreach my $mailAddress ($mailServer->getAccountMailAddresses($userName)) {	
+	    $mailAddress =~ s/\@/+$groupName\@/;
+	    $OUT .= sprintf("%-48s %s\n", $mailAddress, $helpdesk{FrontendAddress});
+	}
+    }
+}

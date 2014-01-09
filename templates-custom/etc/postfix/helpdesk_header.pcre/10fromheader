@@ -1,0 +1,8 @@
+#
+# 10fromheader -- custom template
+# 
+# Replace "From:" mime header
+# 
+/^From:.+(\+{ $helpdesk{GroupName} }@)/	REPLACE	From: "{ $helpdesk{FrontendName} || ucfirst($helpdesk{GroupName} || 'helpdesk') }" <{ $helpdesk{FrontendAddress} }>
+
+

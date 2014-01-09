@@ -1,0 +1,9 @@
+{
+    #
+    # 30helpdesk -- custom template
+    #
+    push @postmapList, qw(
+         helpdesk_maps
+    );
+    '';
+}
